@@ -1,1 +1,33 @@
+#1 Flutter setup:
+- Flutter SDK (Includes DART by default)
+- An editor (VsCode is my choice)
 
+#2 To run Flutter, we can use:
+- Android Emulator or actual device
+- IOS Emulator or actual device
+- Chrome Browser
+- flutter config --enable-web     //enables the feature
+                
+                EVERYTHING IN FLUTTER IS A WIDGET
+#3 Example code -----------------------------------------------------------
+
+import 'package:flutter/material.dart';   // imports the material component library
+
+void main() => runApp(MyApp());     // main function calling the runApp() which has our app
+
+class MyApp extends StatelessWidget {   // this inheritance turns our app itself into a StatelessWidget
+  @override
+  Widget build(BuildContext context) {    // build - speccifies the positioning as per the embedded widgets
+    return MaterialApp(      // Inside the constructor of MaterialApp, we specify our UI Components           
+      home: Scaffold(    // Scafold consists of Appbar, body, etc - more like a <document> tag in html 
+        appBar: AppBar(
+          title: const Text('Welcome to Flutter'),
+        ),
+        body: const Center(
+          child: const Text('Hello World'),
+        ),
+      ),
+    );
+  }
+}
+----------------------------------------------------------------------
