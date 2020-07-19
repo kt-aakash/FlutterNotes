@@ -18,6 +18,17 @@
 8) Decision making statements:
    - Pretty much the same if else and switch statemrnts
    
-9) 
+9) Numbers:
+   - num.parse('12') -> converts the String numeral to interger
+   - num.pares('12.5') -> converts the String numeral to double
+   Additionally, it has certin properties and methods like:
+   int a = 5
+   a.sign
+   a.hashmap
+   a.abs()
+   
+10) String:
+    - str.codeUnits => Returns the corresponding UTF-16 values of the respecctive characters in the string
+    And other general string functions
     
 
