@@ -31,4 +31,13 @@
     - str.codeUnits => Returns the corresponding UTF-16 values of the respecctive characters in the string
     And other general string functions
     
+11) bool:
+    - Unlike JavaScript, the Boolean data type recognizes only the literal true as true. Any other value is considered as false
+
+12) list:
+    - Pretty much the same as lists in other languages
+    - lists are mutable in Dart
+    
+
+
 
