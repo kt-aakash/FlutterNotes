@@ -130,7 +130,17 @@ bool checkIf_classAvailableInlibrary(Symbol libraryName, Symbol className) {
     - dart:core library contains all the regular collections
     - The Iterator class from the dart:core library enables easy collection traversal. Every collection has an iterator property. This property returns an iterator that points to the objects in the collection.
 
-21) 
+21) Collections
+    - Dart is an optionally typed language
+    - However, a Dart collection can be made to hold homogenous values. The concept of Generics can be used to achieve the same.
+    
+22) Functions
+    - Optional parameters are allowed in functions. void function_name(param1, [optional_param_1, optional_param_2]) { } . They are always mentioned at the end.
+    
+
+
+Note: The above is just beginners notes. I highly recommend to check the official documentation which details many other properties of Dart  : 
+- https://dart.dev/guides/language/language-tour#functions-as-first-class-objects  
     
 
 
