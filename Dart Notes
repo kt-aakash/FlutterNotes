@@ -37,7 +37,100 @@
 12) list:
     - Pretty much the same as lists in other languages
     - lists are mutable in Dart
+
+13) Dart doesn't support arrays
+    
+14) Maps:
+    - We have map.forEach(()=>{})   //passing an anonymous func to be applied on each of the element of map
+    - Similar to other languages. Nothing new here
+    
+15) Symbols:
+    - Symbols in Dart are opaque, dynamic string name used in reflecting out metadata from a library. Simply put, symbols are a way to store the relationship between a human readable string and a string that is optimized to be used by computers.
+    - Ex:
+          library foo_lib;   
+// libarary name can be a symbol   
+
+class Foo {         
+   // class name can be a symbol  
+   m1() {        
+      // method name can be a symbol 
+      print("Inside m1"); 
+   } 
+   m2() { 
+      print("Inside m2"); 
+   } 
+   m3() { 
+      print("Inside m3"); 
+   } 
+}
+
+
+import 'dart:core'; 
+import 'dart:mirrors'; 
+import 'Foo.dart';  
+
+main() { 
+   Symbol lib = new Symbol("foo_lib");   
+   //library name stored as Symbol 
+   
+   Symbol clsToSearch = new Symbol("Foo");  
+   // class name stored as Symbol  
+   
+   if(checkIf_classAvailableInlibrary(lib, clsToSearch))  
+   // searches Foo class in foo_lib library 
+      print("class found.."); 
+}  
+   
+bool checkIf_classAvailableInlibrary(Symbol libraryName, Symbol className) { 
+   MirrorSystem mirrorSystem = currentMirrorSystem(); 
+   LibraryMirror libMirror = mirrorSystem.findLibrary(libraryName); 
+      
+   if (libMirror != null) { 
+      print("Found Library"); 
+      print("checkng...class details.."); 
+      print("No of classes found is : ${libMirror.declarations.length}"); 
+      libMirror.declarations.forEach((s, d) => print(s));  
+         
+      if (libMirror.declarations.containsKey(className)) return true; 
+      return false; 
+   } 
+}
     
 
+16) runes - used to represent Strings in utf-32 format. 
+    -Requires : import 'dart:core' 
+
+
+17) Enumerated List - nothing different
+
+18) Interfaces
+    -  Dart does not have a syntax for declaring interfaces. Class declarations are themselves interfaces in Dart.
+    -  Classes should use the implements keyword to be able to use an interface. It is mandatory for the implementing class to provide a concrete implementation of all the functions of the implemented interface. In other words, a class must redefine every function in the interface it wishes to implement.
+    -  A class can implement multiple interfaces. The interfaces are separated by a comma.    
+
+19) Class
+    - Dart provides named constructors to enable a class define multiple constructors.
+    - Ex:
+          void main() {           
+          Car c1 = new Car.namedConst('E1001');                                       
+          Car c2 = new Car(); 
+          }           
+          class Car {                   
+          Car() {                           
+          print("Non-parameterized constructor invoked");
+          }                                   
+          Car.namedConst(String engine) { 
+          print("The engine is : ${engine}");    
+          }                               
+          }
+    - Dart doesn't support multiple inheritance
+    
+    
+20) Collections
+    - dart:core library contains all the regular collections
+    - The Iterator class from the dart:core library enables easy collection traversal. Every collection has an iterator property. This property returns an iterator that points to the objects in the collection.
+
+21) 
+    
 
 
